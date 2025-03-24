@@ -1,20 +1,23 @@
 <template>
-    <section class="flex flex-row gap-4 p-4 items-center overflow-x-auto scroll-snap-type-x snap-mandatory ">
-        <ProductCard class="scroll-snap-align-start"></ProductCard>
-        <ProductCard class="snap-start"></ProductCard>
-        <ProductCard class="snap-start"></ProductCard>
-        <ProductCard class="snap-start"></ProductCard>
-        <ProductCard class="snap-start"></ProductCard>
-        <ProductCard class="snap-start"></ProductCard>
+
+    <section
+        class="flex flex-row gap-4 bg-amber-100 p-4 items-center overflow-x-auto scroll-snap-type-x snap-mandatory">
+        <template v-for="(item, index) in catalogFilteredByBrand" :key="index">
+            <ProductCard :product="item" :class="[index ? 'snap-start' : 'scroll-snap-align-start']"></ProductCard>
+        </template>
     </section>
 </template>
 
 <script setup lang="ts">
-import { useCounterStore } from '~/stores/store';
+import { useComposableProductCatalogStore } from '~/stores/store';
 import ProductCard from '~/components/ProductCard.vue';
+import { onMounted } from 'vue';
 
-const store = useCounterStore()
-const { name, count, doubleCount, } = storeToRefs(store)
+const { productCatalogFilteredByBrand,
+    catalogFilteredByBrand } = useComposableProductCatalogStore()
+onMounted(() => {
+    productCatalogFilteredByBrand('Puma');
+});
 </script>
 
 <style scoped></style>

@@ -1,0 +1,194 @@
+[
+    {
+        "name": "Nike Dunk Low Red",
+        "id": "nike-dunk-low-red",
+        "rating": 4.9,
+        "reviews": 123,
+        "originalPrice": 180.00,
+        "discountedPrice": 145.00
+    },
+    {
+        "name": "Nike Air Max 90",
+        "id": "nike-air-max-90",
+        "rating": 4.8,
+        "reviews": 98,
+        "originalPrice": 200.00,
+        "discountedPrice": 170.00
+    },
+    {
+        "name": "Nike Zoom Fly 5",
+        "id": "nike-zoom-fly-5",
+        "rating": 4.7,
+        "reviews": 76,
+        "originalPrice": 220.00,
+        "discountedPrice": 190.00
+    },
+    {
+        "name": "Nike Pegasus Trail 4",
+        "id": "nike-pegasus-trail-4",
+        "rating": 4.6,
+        "reviews": 89,
+        "originalPrice": 160.00,
+        "discountedPrice": 140.00
+    },
+    {
+        "name": "Nike Blazer Mid '77",
+        "id": "nike-blazer-mid-77",
+        "rating": 4.9,
+        "reviews": 150,
+        "originalPrice": 120.00,
+        "discountedPrice": 100.00
+    },
+    {
+        "name": "Nike React Infinity Run",
+        "id": "nike-react-infinity-run",
+        "rating": 4.8,
+        "reviews": 110,
+        "originalPrice": 180.00,
+        "discountedPrice": 150.00
+    },
+    {
+        "name": "Adidas Ultraboost 22",
+        "id": "adidas-ultraboost-22",
+        "rating": 4.9,
+        "reviews": 200,
+        "originalPrice": 190.00,
+        "discountedPrice": 160.00
+    },
+    {
+        "name": "Adidas NMD R1",
+        "id": "adidas-nmd-r1",
+        "rating": 4.7,
+        "reviews": 140,
+        "originalPrice": 150.00,
+        "discountedPrice": 130.00
+    },
+    {
+        "name": "Adidas Forum Low",
+        "id": "adidas-forum-low",
+        "rating": 4.6,
+        "reviews": 95,
+        "originalPrice": 110.00,
+        "discountedPrice": 90.00
+    },
+    {
+        "name": "Adidas Gazelle",
+        "id": "adidas-gazelle",
+        "rating": 4.8,
+        "reviews": 120,
+        "originalPrice": 100.00,
+        "discountedPrice": 85.00
+    },
+    {
+        "name": "Adidas Superstar",
+        "id": "adidas-superstar",
+        "rating": 4.9,
+        "reviews": 180,
+        "originalPrice": 120.00,
+        "discountedPrice": 100.00
+    },
+    {
+        "name": "Adidas Terrex Swift R3",
+        "id": "adidas-terrex-swift-r3",
+        "rating": 4.7,
+        "reviews": 75,
+        "originalPrice": 140.00,
+        "discountedPrice": 120.00
+    },
+    {
+        "name": "Reebok Club C 85",
+        "id": "reebok-club-c-85",
+        "rating": 4.8,
+        "reviews": 130,
+        "originalPrice": 100.00,
+        "discountedPrice": 85.00
+    },
+    {
+        "name": "Reebok Nano X3",
+        "id": "reebok-nano-x3",
+        "rating": 4.7,
+        "reviews": 90,
+        "originalPrice": 130.00,
+        "discountedPrice": 110.00
+    },
+    {
+        "name": "Reebok Zig Kinetica",
+        "id": "reebok-zig-kinetica",
+        "rating": 4.6,
+        "reviews": 80,
+        "originalPrice": 120.00,
+        "discountedPrice": 100.00
+    },
+    {
+        "name": "Reebok Floatride Energy 4",
+        "id": "reebok-floatride-energy-4",
+        "rating": 4.8,
+        "reviews": 100,
+        "originalPrice": 140.00,
+        "discountedPrice": 120.00
+    },
+    {
+        "name": "Reebok Classic Leather",
+        "id": "reebok-classic-leather",
+        "rating": 4.9,
+        "reviews": 150,
+        "originalPrice": 90.00,
+        "discountedPrice": 75.00
+    },
+    {
+        "name": "Reebok Legacy Lifter II",
+        "id": "reebok-legacy-lifter-ii",
+        "rating": 4.7,
+        "reviews": 70,
+        "originalPrice": 200.00,
+        "discountedPrice": 180.00
+    },
+    {
+        "name": "Puma RS-X3",
+        "id": "puma-rs-x3",
+        "rating": 4.8,
+        "reviews": 110,
+        "originalPrice": 120.00,
+        "discountedPrice": 100.00
+    },
+    {
+        "name": "Puma Suede Classic",
+        "id": "puma-suede-classic",
+        "rating": 4.9,
+        "reviews": 140,
+        "originalPrice": 80.00,
+        "discountedPrice": 70.00
+    },
+    {
+        "name": "Puma Future Rider",
+        "id": "puma-future-rider",
+        "rating": 4.7,
+        "reviews": 90,
+        "originalPrice": 100.00,
+        "discountedPrice": 85.00
+    },
+    {
+        "name": "Puma Cali Star",
+        "id": "puma-cali-star",
+        "rating": 4.6,
+        "reviews": 75,
+        "originalPrice": 90.00,
+        "discountedPrice": 75.00
+    },
+    {
+        "name": "Puma Ignite Flash",
+        "id": "puma-ignite-flash",
+        "rating": 4.8,
+        "reviews": 95,
+        "originalPrice": 110.00,
+        "discountedPrice": 95.00
+    },
+    {
+        "name": "Puma Deviate Nitro",
+        "id": "puma-deviate-nitro",
+        "rating": 4.9,
+        "reviews": 130,
+        "originalPrice": 150.00,
+        "discountedPrice": 130.00
+    }
+]
