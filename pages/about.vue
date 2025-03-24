@@ -15,8 +15,9 @@ import { onMounted } from 'vue';
 
 const { productCatalogFilteredByBrand,
     catalogFilteredByBrand } = useComposableProductCatalogStore()
+
 onMounted(() => {
-    productCatalogFilteredByBrand('Puma');
+    productCatalogFilteredByBrand('Adidas');
 });
 </script>
 

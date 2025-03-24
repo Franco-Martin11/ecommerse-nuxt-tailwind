@@ -81,6 +81,8 @@ export type ProductData = {
     reviews: number;
     originalPrice: number;
     discountedPrice: number;
+    slug: string;
+    brand: string;
 }
 export interface ProductCardProps {
     product: ProductData;
@@ -89,7 +91,7 @@ export interface ProductCardProps {
 const props = defineProps<ProductCardProps>();
 
 const dynamicImagePath = computed(() => {
-    return `/${props.product.id}.png`;
+    return `/${props.product.slug}.png`;
 });
 
 </script>

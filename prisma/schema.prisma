@@ -1,0 +1,27 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id              String   @id @default(uuid()) // ID único generado automáticamente
+  name            String   // Nombre del producto
+  slug            String   @unique // ID legible en URL
+  brand           String   // Marca (Nike, Adidas, etc.)
+  rating          Float    // Calificación (1-5)
+  reviews         Int      // Número de reseñas
+  originalPrice   Float    // Precio original
+  discountedPrice Float    // Precio con descuento
+  createdAt       DateTime @default(now()) // Fecha de creación
+  updatedAt       DateTime @updatedAt      // Fecha de última actualización
+}

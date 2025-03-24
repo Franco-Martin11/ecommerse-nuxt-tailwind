@@ -9,14 +9,12 @@ export const useProductCatalog = defineStore("productCatalog", () => {
    * This function is automatically called when the store is initialized.
    */
   const fetchProductCatalog = async (): Promise<void> => {
-    const response = await import("@/constants/productsList.json");
-    productCatalog.value = response.default || response;
+    const response = await useFetch("/api/products");
+    productCatalog.value = response.data.value;
   };
 
   const productCatalogFiltered = computed<ProductData[]>(() => {
-    return productCatalog.value.filter(
-      (product: ProductData) => product.rating <= 4.6
-    );
+    return productCatalog.value;
   });
 
   /**
@@ -30,11 +28,13 @@ export const useProductCatalog = defineStore("productCatalog", () => {
         product.name.toLowerCase().includes(brand.toLowerCase())
     );
   };
-
+  fetchProductCatalog();
   return {
     productCatalog: productCatalog as Ref<ProductData[]>,
     fetchProductCatalog,
-    productCatalogFiltered: productCatalogFiltered as ComputedRef<ProductData[]>,
+    productCatalogFiltered: productCatalogFiltered as ComputedRef<
+      ProductData[]
+    >,
     productCatalogFilteredByBrand,
     catalogFilteredByBrand: catalogFilteredByBrand as Ref<ProductData[]>,
   };
