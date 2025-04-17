@@ -17,6 +17,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.WRITE_TOKEN_GITHUB }}
+          ref: master  # Hacemos checkout de master primero
       
       - name: Setup Git
         run: |
@@ -27,17 +28,16 @@ jobs:
         id: count_commits
         run: |
           git fetch origin
-          git update-ref refs/heads/master origin/master
-          git fetch origin dev:dev
-          COMMIT_COUNT=$(git rev-list --count master..dev)
+          git fetch origin dev  # Simplemente hacemos fetch sin intentar actualizar la rama local
+          COMMIT_COUNT=$(git rev-list --count HEAD..origin/dev)
           echo "COMMIT_COUNT=$COMMIT_COUNT" >> $GITHUB_ENV
           echo "Commits ahead of master: $COMMIT_COUNT"
       
       - name: Merge dev to master
-        if: ${{ env.COMMIT_COUNT >= 10 }}
+        if: ${{ env.COMMIT_COUNT >= 1 }}
         run: |
           echo "Se encontraron $COMMIT_COUNT commits nuevos, realizando merge..."
-          git checkout master
-          git merge --no-ff dev -m "feature: merge dev into master after $COMMIT_COUNT new commits"
+          # Ya estamos en master, no necesitamos checkout
+          git merge --no-ff origin/dev -m "feature: merge dev into master after $COMMIT_COUNT new commits"
           git remote set-url origin https://x-access-token:${{ secrets.WRITE_TOKEN_GITHUB }}@github.com/${{ github.repository }}
           git push origin master
