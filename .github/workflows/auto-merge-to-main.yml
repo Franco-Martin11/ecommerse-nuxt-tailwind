@@ -1,12 +1,12 @@
 name: Auto Merge to master
 
 on:
-  push:
-    branches:
-      - dev
+  workflow_dispatch:  # Permite ejecutar manualmente
+  schedule:
+    - cron: '0 2 * * *'  # Se ejecuta todos los días a las 2:00 AM
 
 jobs:
-  merge-to-master:
+  check-and-merge:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -23,9 +23,20 @@ jobs:
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'github-actions@github.com'
       
-      - name: Merge dev to master
+      - name: Count commits ahead
+        id: count_commits
         run: |
+          git fetch origin master:master
+          git fetch origin dev:dev
+          COMMIT_COUNT=$(git rev-list --count master..dev)
+          echo "COMMIT_COUNT=$COMMIT_COUNT" >> $GITHUB_ENV
+          echo "Commits ahead of master: $COMMIT_COUNT"
+      
+      - name: Merge dev to master
+        if: ${{ env.COMMIT_COUNT >= 10 }}
+        run: |
+          echo "Se encontraron $COMMIT_COUNT commits nuevos, realizando merge..."
           git checkout master
-          git merge --no-ff dev -m "feature: merge dev into master"
+          git merge --no-ff dev -m "feature: merge dev into master after $COMMIT_COUNT new commits"
           git remote set-url origin https://x-access-token:${{ secrets.WRITE_TOKEN_GITHUB }}@github.com/${{ github.repository }}
           git push origin master

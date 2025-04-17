@@ -32,3 +32,6 @@ prisma/.env.local
 prisma/.env.*.local
 prisma/.next/
 prisma/.cache/
+
+# Developer tools (local only)
+.dev-tools/
