@@ -26,7 +26,8 @@ jobs:
       - name: Count commits ahead
         id: count_commits
         run: |
-          git fetch origin master:master
+          git fetch origin
+          git update-ref refs/heads/master origin/master
           git fetch origin dev:dev
           COMMIT_COUNT=$(git rev-list --count master..dev)
           echo "COMMIT_COUNT=$COMMIT_COUNT" >> $GITHUB_ENV
