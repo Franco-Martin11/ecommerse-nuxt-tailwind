@@ -9,8 +9,16 @@ export const useProductCatalog = defineStore("productCatalog", () => {
    * This function is automatically called when the store is initialized.
    */
   const fetchProductCatalog = async (): Promise<void> => {
-    const response = await useFetch("/api/products");
-    productCatalog.value = response.data.value;
+    const response = await useFetch<{ success: boolean; data: ProductData[] }>(
+      "/api/products"
+    );
+    const responseData = response.data.value;
+    if (!responseData) {
+      return;
+    }
+    if (responseData.success) {
+      productCatalog.value = responseData?.data ?? [];
+    }
   };
 
   const productCatalogFiltered = computed<ProductData[]>(() => {
