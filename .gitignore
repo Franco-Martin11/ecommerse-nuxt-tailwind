@@ -22,3 +22,13 @@ logs
 .env
 .env.*
 !.env.example
+
+# Node.js
+node_modules/
+
+# Prisma
+prisma/.env
+prisma/.env.local
+prisma/.env.*.local
+prisma/.next/
+prisma/.cache/

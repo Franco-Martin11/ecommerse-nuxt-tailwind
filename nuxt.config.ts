@@ -2,8 +2,11 @@
 import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
+  image: {
+    dir: "public/images",
+  },
   devtools: { enabled: true },
-  modules: ["@pinia/nuxt", "@nuxtjs/google-fonts"],
+  modules: ["@pinia/nuxt", "@nuxtjs/google-fonts", "@nuxt/image"],
   googleFonts: {
     families: {
       Montserrat: [600], // Peso 600
