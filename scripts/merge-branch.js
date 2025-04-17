@@ -25,14 +25,13 @@ try {
   execSync('git checkout dev', { stdio: 'inherit' });
   execSync('git pull origin dev', { stdio: 'inherit' });
   
-  // Hacer merge de la rama especificada a dev
-  console.log(`Mergeando ${branchName} a dev...`);
-  execSync(`git merge ${branchName} --no-ff`, { stdio: 'inherit' });
+  // Crear el mensaje de commit para el merge
+  const commitMessage = `Merge branch '${branchName}' into dev`;
   
-  // Crear commit de merge
-  const commitMessage = `merge: ${branchName} into dev`;
-  console.log(`Creando commit: ${commitMessage}`);
-  execSync(`git commit -m "${commitMessage}"`, { stdio: 'inherit' });
+  // Hacer merge de la rama especificada a dev con mensaje predefinido
+  // Usamos --no-edit para evitar que se abra el editor
+  console.log(`Mergeando ${branchName} a dev...`);
+  execSync(`git merge --no-ff --no-edit -m "${commitMessage}" ${branchName}`, { stdio: 'inherit' });
   
   // Push a origin/dev
   console.log('Haciendo push a origin/dev...');
