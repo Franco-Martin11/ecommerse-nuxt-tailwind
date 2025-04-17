@@ -8,12 +8,15 @@ on:
 jobs:
   merge-to-master:
     runs-on: ubuntu-latest
-    
+    permissions:
+      contents: write
+      
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          token: ${{ secrets.WRITE_TOKEN_GITHUB }}
       
       - name: Setup Git
         run: |
@@ -24,4 +27,5 @@ jobs:
         run: |
           git checkout master
           git merge --no-ff dev -m "feature: merge dev into master"
-          git push origin master 
+          git remote set-url origin https://x-access-token:${{ secrets.WRITE_TOKEN_GITHUB }}@github.com/${{ github.repository }}
+          git push origin master
