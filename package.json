@@ -8,8 +8,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "newbranch": "node scripts/create-branch.js",
-    "merge-branch": "node scripts/merge-branch.js"
+    "newbranch": "node .dev-tools/create-branch.js",
+    "merge-branch": "node .dev-tools/merge-branch.js"
   },
   "dependencies": {
     "@nuxt/image": "1.10.0",
