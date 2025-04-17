@@ -3,7 +3,7 @@ name: Auto Merge to master
 on:
   workflow_dispatch:  # Permite ejecutar manualmente
   schedule:
-    - cron: '0 0 */4 * *'  # Se ejecuta cada 4 días
+    - cron: '0 2 * * *'  # Se ejecuta todos los días a las 2:00 AM
 
 jobs:
   check-and-merge:
