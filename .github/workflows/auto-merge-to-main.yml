@@ -1,7 +1,7 @@
 name: Auto Merge to master
 
 on:
-  workflow_dispatch:  # Permite ejecutar manualmente
+  workflow_dispatch:
   schedule:
     - cron: '0 2 * * *'  # Se ejecuta todos los días a las 2:00 AM
 
@@ -17,7 +17,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.WRITE_TOKEN_GITHUB }}
-          ref: master  # Hacemos checkout de master primero
+          ref: master  # Checkout de master
       
       - name: Setup Git
         run: |
@@ -28,7 +28,7 @@ jobs:
         id: count_commits
         run: |
           git fetch origin
-          git fetch origin dev  # Simplemente hacemos fetch sin intentar actualizar la rama local
+          git fetch origin dev
           COMMIT_COUNT=$(git rev-list --count HEAD..origin/dev)
           echo "COMMIT_COUNT=$COMMIT_COUNT" >> $GITHUB_ENV
           echo "Commits ahead of master: $COMMIT_COUNT"
@@ -37,7 +37,6 @@ jobs:
         if: ${{ env.COMMIT_COUNT >= 1 }}
         run: |
           echo "Se encontraron $COMMIT_COUNT commits nuevos, realizando merge..."
-          # Ya estamos en master, no necesitamos checkout
           git merge --no-ff origin/dev -m "feature: merge dev into master after $COMMIT_COUNT new commits"
           git remote set-url origin https://x-access-token:${{ secrets.WRITE_TOKEN_GITHUB }}@github.com/${{ github.repository }}
           git push origin master
