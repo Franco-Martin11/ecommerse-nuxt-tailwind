@@ -1,7 +1,7 @@
 <template>
-  <!-- <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-  </div> -->
-  <NuxtPage />
+  <div class="min-h-screen" data-theme="collusion">
+    <NuxtPage />
+  </div>
 </template>
+
+

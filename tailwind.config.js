@@ -18,8 +18,8 @@ export default {
     },
   },
   daisyui: {
-    themes: ["pastel"],
+    themes: ["light", "collusion"],
+    darkTheme: "light",
   },
   plugins: [daisyui],
 }
-
