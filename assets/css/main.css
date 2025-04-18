@@ -1,3 +1,5 @@
+@tailwind utilities;
+@import "tailwindcss/preflight";
 @import "tailwindcss";
 @plugin "daisyui";
 @plugin "daisyui/theme" {
@@ -5,6 +7,15 @@
     default: true;
     prefersdark: false;
     color-scheme: "light";
+    
+    /* Fuentes principales */
+    font-family: 'Poppins', sans-serif;
+    --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+    --font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-poppins: 'Poppins', sans-serif;
+    
     --color-base-100: oklch(98% 0 0);
     --color-base-200: oklch(95% 0 0);
     --color-base-300: oklch(91% 0 0);
@@ -35,3 +46,7 @@
     --noise: 1;
   }
   
+  
+html, body {
+  font-family: 'Poppins', sans-serif;
+}

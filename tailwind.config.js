@@ -12,13 +12,14 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        montserrat: ['Montserrat', 'sans-serif'],
-        poppins: ['Poppins', 'sans-serif'],
+        'sans': ['Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        'montserrat': ['Montserrat', 'sans-serif'],
+        'poppins': ['Poppins', 'sans-serif'],
       },
     },
   },
   daisyui: {
-    themes: ["light", "collusion"],
+    themes: ["collusion"],
     darkTheme: "light",
   },
   plugins: [daisyui],
