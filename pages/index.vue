@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <HeroSection />
-  </div>
+  <HeroSection />
+  <ProseTest />
 </template>
 
 <script setup>
-import HeroSection from '../components/HeroSection.vue';
-</script> 
+import HeroSection from "../components/HeroSection.vue";
+import ProseTest from "../components/ProseTest.vue";
+</script>

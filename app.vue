@@ -1,7 +1,7 @@
 <template>
-  <div class="min-h-screen" data-theme="collusion">
-    <NuxtPage />
-  </div>
+  <NuxtLayout>
+    <NuxtPage class="min-h-screen z-10" />
+  </NuxtLayout>
 </template>
 
 <style>

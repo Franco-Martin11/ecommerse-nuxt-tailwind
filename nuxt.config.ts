@@ -5,6 +5,13 @@ export default defineNuxtConfig({
   image: {
     dir: "public/images",
   },
+  app: {
+    head: {
+      htmlAttrs: {
+        'data-theme': 'collusion'
+      }
+    }
+  },
   devtools: { enabled: true },
   modules: ["@pinia/nuxt", "@nuxtjs/google-fonts", "@nuxt/image"],
   googleFonts: {
