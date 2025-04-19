@@ -1,16 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   image: {
     dir: "public/images",
-  },
-  app: {
-    head: {
-      htmlAttrs: {
-        'data-theme': 'collusion'
-      }
-    }
   },
   devtools: { enabled: true },
   modules: ["@pinia/nuxt", "@nuxtjs/google-fonts", "@nuxt/image"],
@@ -26,7 +18,13 @@ export default defineNuxtConfig({
     storesDirs: ["./stores/**", "./custom-folder/stores/**"],
   },
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [],
   },
   css: ["~/assets/css/main.css"],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
 });
