@@ -1,5 +1,4 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   image: {
@@ -19,7 +18,13 @@ export default defineNuxtConfig({
     storesDirs: ["./stores/**", "./custom-folder/stores/**"],
   },
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [],
   },
   css: ["~/assets/css/main.css"],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
 });

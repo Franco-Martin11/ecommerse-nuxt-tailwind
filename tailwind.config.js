@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-import daisyui from "daisyui"
 export default {
   content: [
     "./components/**/*.{js,vue,ts}",
@@ -10,16 +9,6 @@ export default {
     "./error.vue",
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        montserrat: ['Montserrat', 'sans-serif'],
-        poppins: ['Poppins', 'sans-serif'],
-      },
-    },
+    extend: {},
   },
-  daisyui: {
-    themes: ["pastel"],
-  },
-  plugins: [daisyui],
-}
-
+};
