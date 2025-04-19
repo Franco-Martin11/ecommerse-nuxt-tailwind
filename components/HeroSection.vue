@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- Banda Negra con Animación Mejorada -->
     <MarqueeText
       :items="marqueeItems"
       :highlightIndices="[0]"
@@ -32,6 +31,5 @@
 import { ref } from "vue";
 import MarqueeText from "./MarqueeText.vue";
 
-// Texto para el marquee
 const marqueeItems = ref(["COLLUSION X RAYAN", "SELECTED", "SUMMER / 2024"]);
 </script>
