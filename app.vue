@@ -1,6 +1,5 @@
 <template>
   <div class="min-h-screen" data-theme="collusion">
-    <FontDemo />
     <NuxtPage />
   </div>
 </template>
