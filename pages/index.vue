@@ -1,9 +1,9 @@
 <template>
-  <HeroSection />
-  <ProseTest />
+  <div>
+    <ColorPalette />
+  </div>
 </template>
 
 <script setup>
-import HeroSection from "../components/HeroSection.vue";
-import ProseTest from "../components/ProseTest.vue";
+import ColorPalette from '../components/ColorPalette.vue';
 </script>
