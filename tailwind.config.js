@@ -49,6 +49,15 @@ export default {
           DEFAULT: 'oklch(64.84% 0.293 29.349)',
           content: 'oklch(12.968% 0.058 29.349)',
         },
+        // Custom Palette from Image
+        brand: {
+          lime: '#CCFF00', // Vibrant Lime
+          black: '#000000',
+          white: '#FFFFFF',
+          sky: '#A0D8EF', // Light Blue Sky
+          grey: '#F5F5F5', // Light Grey Background
+          text: '#333333', // Dark Grey Text
+        }
       },
       fontFamily: {
         'sans': ['Poppins', 'sans-serif'],

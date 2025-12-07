@@ -4,10 +4,12 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
+    "build:full": "prisma generate && nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
+    "generate": "prisma generate && nuxt generate",
+    "preview": "node --import ./scripts/prisma-polyfill.js .output/server/index.mjs",
+    "preview:nuxt": "nuxt preview",
+    "postinstall": "nuxt prepare && prisma generate",
     "newbranch": "node .dev-tools/create-branch.js",
     "merge-branch": "node .dev-tools/merge-branch.js"
   },
@@ -30,7 +32,8 @@
     "prisma": "^6.5.0",
     "tailwindcss": "3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.2",
+    "tar-fs": ">=3.1.1"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

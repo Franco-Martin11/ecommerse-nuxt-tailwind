@@ -23,7 +23,7 @@ const { productCatalogFilteredByBrand,
     catalogFilteredByBrand, productCatalog } = useComposableProductCatalogStore()
 
 onMounted(() => {
-    productCatalogFilteredByBrand('Adidas');
+    productCatalogFilteredByBrand('');
 });
 </script>
 
