@@ -17,6 +17,45 @@ export default defineNuxtConfig({
   pinia: {
     storesDirs: ["./stores/**", "./custom-folder/stores/**"],
   },
+  nitro: {
+    esbuild: {
+      options: {
+        target: "node18",
+      },
+    },
+    externals: {
+      inline: ["prisma/generated"],
+    },
+    experimental: {
+      wasm: true,
+    },
+    // Copiar archivos de Prisma al output e inyectar polyfill
+    hooks: {
+      "build:before": async () => {
+        const { copyFileSync, mkdirSync, existsSync, readdirSync, statSync, writeFileSync } = await import("fs");
+        const { join } = await import("path");
+        
+        const prismaGenerated = join(process.cwd(), "prisma/generated");
+        const outputDir = join(process.cwd(), ".output/server/prisma/generated");
+        
+        if (existsSync(prismaGenerated)) {
+          mkdirSync(outputDir, { recursive: true });
+          
+          // Copiar todos los archivos necesarios
+          const files = readdirSync(prismaGenerated);
+          for (const file of files) {
+            const sourcePath = join(prismaGenerated, file);
+            const destPath = join(outputDir, file);
+            const stat = statSync(sourcePath);
+            
+            if (stat.isFile()) {
+              copyFileSync(sourcePath, destPath);
+            }
+          }
+        }
+      },
+    },
+  },
   vite: {
     plugins: [],
   },

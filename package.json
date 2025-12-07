@@ -4,10 +4,12 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
+    "build:full": "prisma generate && nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
+    "generate": "prisma generate && nuxt generate",
+    "preview": "node --import ./scripts/prisma-polyfill.js .output/server/index.mjs",
+    "preview:nuxt": "nuxt preview",
+    "postinstall": "nuxt prepare && prisma generate",
     "newbranch": "node .dev-tools/create-branch.js",
     "merge-branch": "node .dev-tools/merge-branch.js"
   },
